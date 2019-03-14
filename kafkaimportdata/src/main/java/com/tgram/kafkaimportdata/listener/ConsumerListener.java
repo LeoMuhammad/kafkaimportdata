@@ -17,7 +17,7 @@ public class ConsumerListener {
     private KafkaTemplate kafkaTemplate;
 
     @KafkaListener(topics = {"${kafka.consumer.topic}"})
-    public void test(ConsumerRecord<?,?> record){
-        System.out.println(record);
+    public void test(ConsumerRecord<?, ?> record) {
+        System.out.println(record.value());
     }
 }

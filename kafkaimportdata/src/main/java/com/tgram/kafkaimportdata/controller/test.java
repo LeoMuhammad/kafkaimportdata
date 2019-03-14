@@ -11,7 +11,9 @@ public class test {
     private KafkaTemplate kafkaTemplate;
 
     @RequestMapping("/")
-    public void send(){
-        kafkaTemplate.send("test","aaaa");
+    public void send() {
+        for (int i = 0; i < 20; i++) {
+            kafkaTemplate.send("test2", i+"");
+        }
     }
 }
